@@ -25,7 +25,12 @@ def generatePage():
         print(filename)
         webbrowser.open_new_tab(filename)
     
-
+# Update database with current content of text widget
+def addPage():
+    text = user_input.get()
+    conn.execute('INSERT INTO pages_info(CONTENT) VALUES("' + text + '")');
+    conn.commit()
+    getData()
 
 
 
