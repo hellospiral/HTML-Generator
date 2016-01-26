@@ -22,16 +22,19 @@ user_input = tk.StringVar(root)
 
 # elements of GUI window
 tk.Label(root, text = "Web Page Creator", font = ("Helvetica", 28)).pack()
-entry = tk.Entry(root, width = 50, textvariable = user_input)
-entry.pack(padx = 5, pady = 5)
+tk.Label(root, text = "What would you like your new web page to say?", font = ("Helvetica", 16)).pack()
+entry = tk.Entry(root, width = 50, textvariable = user_input, font = ("Helvetica", 16))
+entry.pack(padx = 5, pady = 10)
 
-addButton = tk.Button(root, text = "Add webpage")
+addButton = tk.Button(root, text = "Add webpage", font = ("Helvetica", 16))
 addButton.pack(padx = 5, pady = 5)
 
 listbox = Listbox(root, width = 50)
 listbox.pack(padx = 5, pady = 5)
 
-generateButton = tk.Button(root, text = "Generate web page")
+generateButton = tk.Button(root, text = "Generate web page", font = ("Helvetica", 16))
 generateButton.pack(padx = 5, pady = 5)
+
+root.title("HTML Generator")
 
 root.mainloop()
