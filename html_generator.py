@@ -32,6 +32,14 @@ def addPage():
     conn.commit()
     getData()
 
+# Function to retrieve updates from the database and insert them into the listbox
+def getData():
+    listbox.delete(0, END)
+    cursor = conn.execute("SELECT * from pages_info")
+    s = cursor.fetchall()
+    for i in s:
+        listbox.insert(i[0], i[1])
+
 
 
 # elements of GUI window
