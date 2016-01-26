@@ -14,7 +14,16 @@ root = tk.Tk()
 
 user_input = tk.StringVar(root)
 
-
+# function to generate a new html page
+def generatePage():
+    pick = listbox.get(listbox.curselection())
+    with open("index.html", "wt") as out_file:
+        out_file.write("<html>\n<body>\n{}\n</body>\n</html>".format(pick))
+        messagebox.showinfo("Success", "Web page has been generated.")
+        x = os.getcwd()
+        filename = 'file://' + x + '/' + 'index.html'
+        print(filename)
+        webbrowser.open_new_tab(filename)
     
 
 
